@@ -202,6 +202,12 @@ recognition.onstart = () => {
 recognition.onresult = (event) => {
     const transcript = event.results[0][0].transcript;
     outputDiv.value = transcript;
+  $(document).ready(function(){
+    var value = transcript.val().toLowerCase();
+    $(".card, .sa").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+});
 };
 
 recognition.onend = () => {
