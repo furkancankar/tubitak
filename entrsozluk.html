@@ -108,7 +108,7 @@
     <div>
       <h3 class="float-md-start mb-0">Speaking Words</h3>
       <nav class="nav nav-masthead justify-content-center float-md-end">
-        <a class="nav-link fw-bold py-1 px-0"href="/">Anasayfa</a>
+        <button type="button" id="gerigit" class="btn btn-outline-light">Önceki Sayfa</button>
         <!--<a class="nav-link fw-bold py-1 px-0" href="#">X</a>
         <a class="nav-link fw-bold py-1 px-0" href="#">X</a>-->
       </nav>
@@ -151,6 +151,15 @@ recognition.onend = () => {
 startButton.addEventListener('click', () => {
     recognition.start();
 });
+    const button = document.getElementById("gerigit");
+        button.addEventListener("click", () => {
+            window.history.back()
+        });
+        document.addEventListener("keydown", (event) => {
+            if (event.key === "d") { /
+                button.click(); 
+            }
+        });
     </script><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
