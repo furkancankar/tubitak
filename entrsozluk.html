@@ -146,7 +146,7 @@ recognition.onresult = (event) => {
 
 recognition.onend = () => {
   const icon = document.createElement("i");
-  icon.class = "bi bi-mic";
+  icon.classList.add("bi"," bi-mic");
   startButton.appendChild(icon);
 };
 
