@@ -141,7 +141,7 @@
 
 
 <script>
-        fetch('words.json') /
+        fetch('https://furkancankar.github.io/tubitak/words.json') /
             .then(response => {
                 if (!response.ok) {
                     throw new Error('JSON dosyası yüklenemedi!');
@@ -159,7 +159,7 @@
         function generateCards(data) {
             const container = document.getElementById('wordscart');
 
-            data.kelimeler.forEach(kelime => {
+            data.words.forEach(kelime => {
                 // Kart için HTML oluştur
                 const cardHtml = `
                     <div class="col">
