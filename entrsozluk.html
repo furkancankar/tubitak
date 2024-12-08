@@ -146,7 +146,8 @@
  <script>
 
 
-fetch('https://furkancankar.github.io/tubitak/words.json') /
+        // Hatalı JSON'u işlerken anahtarları benzersiz hale getirme
+        fetch('https://furkancankar.github.io/tubitak/words.json') // JSON dosyasının doğru yolu
             .then(response => {
                 if (!response.ok) {
                     throw new Error('JSON dosyası yüklenemedi!');
@@ -154,10 +155,12 @@ fetch('https://furkancankar.github.io/tubitak/words.json') /
                 return response.json();
             })
             .then(data => {
-                generateCards(data); // Kartları oluştur
+                // Geçersiz JSON'u uygun formata dönüştürme
+                const kelimeler = Object.keys(data).map(key => data[key]);
+                generateCards(kelimeler);
             })
             .catch(error => {
-                alert(error)
+                console.error('Hata:', error);
             });
 
         // Kelime kartlarını oluşturan fonksiyon
@@ -181,7 +184,7 @@ fetch('https://furkancankar.github.io/tubitak/words.json') /
                 container.innerHTML += cardHtml;
             });
         }
-   
+
 
 
 
