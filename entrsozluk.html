@@ -117,7 +117,7 @@
 
   <main class="px-3">
     <div class="input-group mb-3">
-      <button class="btn btn-outline-secondary" id="startButton"><i class="bi bi-mic"></i></button>
+      <button class="btn btn-outline-light" id="startButton">Sesli Arama</button>
     <input type="search" id="search" class="form-control border border-light" style="box-shadow:none; background-color:transparent; color:white" >
   </div>
   </main>
@@ -145,9 +145,7 @@ recognition.onresult = (event) => {
 };
 
 recognition.onend = () => {
-  const icon = document.createElement("i");
-  icon.classList.add("bi"," bi-mic");
-  startButton.appendChild(icon);
+  startButton.textContent = 'Sesli Arama';
 };
 
 startButton.addEventListener('click', () => {
