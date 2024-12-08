@@ -204,7 +204,7 @@ recognition.onresult = (event) => {
     outputDiv.value = transcript;
   $(document).ready(function(){
   $("#search").keyup(function(){
-    var value = $(this).transcript.toLowerCase();
+    var value = transcript.toLowerCase();
     $(".card, .sa").filter(function() {
       $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
     });
