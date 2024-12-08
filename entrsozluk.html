@@ -203,12 +203,10 @@ recognition.onresult = (event) => {
     const transcript = event.results[0][0].transcript;
     outputDiv.value = transcript;
   $(document).ready(function(){
-  $("#search").keyup(function(){
     var value = transcript.toLowerCase();
     $(".card, .sa").filter(function() {
       $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
     });
-  });
 });
   
 };
