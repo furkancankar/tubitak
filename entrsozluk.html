@@ -150,7 +150,7 @@
         fetch('https://furkancankar.github.io/tubitak/words.json') // JSON dosyasının doğru yolu
             .then(response => {
                 if (!response.ok) {
-                    throw new Error('JSON dosyası yüklenemedi!');
+                    throw new Error("Json Yok");
                 }
                 return response.json();
             })
@@ -160,7 +160,7 @@
                 generateCards(kelimeler);
             })
             .catch(error => {
-                console.error('Hata:', error);
+                alert(error)
             });
 
         // Kelime kartlarını oluşturan fonksiyon
@@ -211,23 +211,7 @@ recognition.onend = () => {
 startButton.addEventListener('click', () => {
     recognition.start();
 });
-   function goBack() {
-    if (window.history.length > 1) {
-        window.history.back();
-    } else {
-        alert("Önceki sayfa bulunamadı!");
-    }
-}
-    const gerigit = document.getElementById("gerigit");
-        gerigit.addEventListener("click", () => {
-            alert("deneme")
-        });
-        document.addEventListener("keydown", (event) => {
-            if (event.key === "d") { /
-                gerigit.click(); 
-            }
-        });
-    </script><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+       </script><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
   $("#search").keyup(function(){
